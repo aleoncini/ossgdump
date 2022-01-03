@@ -7,6 +7,6 @@ RUN mvn clean package -DskipTests -Dquarkus.package.type=uber-jar
 
 # Create final image
 FROM registry.access.redhat.com/ubi8/openjdk-11
-COPY --from=build /home/jboss/target/gls-1.0.0-SNAPSHOT-runner.jar ./
+COPY --from=build /home/jboss/target/ossgdump-1.0.0-SNAPSHOT-runner.jar ./
 EXPOSE 8080
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","./gls-1.0.0-SNAPSHOT-runner.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","./ossgdump-1.0.0-SNAPSHOT-runner.jar"]
